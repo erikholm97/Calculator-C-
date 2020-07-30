@@ -19,6 +19,15 @@ namespace CalculatorWinForms
 
         private void CalculatorTextBox_TextChanged(object sender, EventArgs e)
         {
+            bool isNumeric = true;
+            foreach (char isChar in CalculatorTextBox.Text)
+            {
+                if (Char.IsLetter(isChar))
+                {
+                    CalculatorTextBox.Text = CalculatorTextBox.Text.Remove(CalculatorTextBox.Text.Length - 1);
+                }
+            }
+           
             
         }
 
