@@ -19,8 +19,7 @@ namespace CalculatorWinForms
 
         private void CalculatorTextBox_TextChanged(object sender, EventArgs e)
         {
-            CalculatorLabel.Text = CalculatorTextBox.Text;
-            CalculatorLabel.Text = CalculatorTextBox.Text;
+            
         }
 
         private void CalculatorLabelText_Click(object sender, EventArgs e)
@@ -35,29 +34,22 @@ namespace CalculatorWinForms
 
         private void CeButtonClick(object sender, EventArgs e)
         {
-
+            CalculatorTextBox.Text = string.Empty;
         }
 
         private void CbuttonClick(object sender, EventArgs e)
         {
-            
+            CalculatorTextBox.Text = string.Empty;
         }
 
         private void DelButtonClick(object sender, EventArgs e)
         {
-            try
-            {
                 CalculatorTextBox.Text = CalculatorTextBox.Text.Remove(CalculatorTextBox.Text.Length - 1);
-            }
-            catch(Exception ex)
-            {
-
-            }
         }
 
         private void DivideButtonClick(object sender, EventArgs e)
         {
-
+            CalculatorTextBox.Text += '/';
         }
 
         private void SevenButtonClick(object sender, EventArgs e)
@@ -133,6 +125,14 @@ namespace CalculatorWinForms
         private void DotButtonClick(object sender, EventArgs e)
         {
             CalculatorTextBox.Text += '.';
+        }
+
+        private void EqualsButtonClick(object sender, EventArgs e)
+        {
+            string value = new DataTable().Compute(CalculatorTextBox.Text, null).ToString();
+            CalculatorLabel.Text = value;
+        }
+        private void EqualsMethod() { 
         }
     }
 }

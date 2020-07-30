@@ -320,6 +320,7 @@
             this.EqualsButton.TabIndex = 19;
             this.EqualsButton.Text = "=";
             this.EqualsButton.UseVisualStyleBackColor = true;
+            this.EqualsButton.Click += new System.EventHandler(this.EqualsButtonClick);
             // 
             // Calculator
             // 
